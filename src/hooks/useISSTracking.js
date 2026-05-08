@@ -12,10 +12,13 @@ export const useISSTracking = () => {
 
   const fetchAstronauts = async () => {
     try {
-      const res = await axios.get('http://api.open-notify.org/astros.json');
+      const res = await axios.get(
+        'https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json'
+      );
+
       setAstronauts(res.data.people || []);
     } catch (err) {
-      console.error("Failed to fetch astronauts:", err);
+      console.error('Astronaut fetch failed:', err);
     }
   };
 
